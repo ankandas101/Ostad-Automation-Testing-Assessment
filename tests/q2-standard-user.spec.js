@@ -11,15 +11,20 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         products = new Products(page);
     });
 
-    test('Verify that user can login with standard_user ', async ({ page }) => {
+    test('Verify that the user can complete checkout successfully after resetting the app state and adding three products', async ({ page }) => {
 
         await home.doLogin("standard_user", "secret_sauce");
         await page.waitForTimeout(1000);
         await expect(page).toHaveURL(/.*inventory/, { timeout: 5000 });
         await products.openMenu();
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(500);
         await products.resetAppState();
+        await page.waitForTimeout(1000);
+        
+        await products.doLogout();
         await page.waitForTimeout(3000);
+        await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
+
     });
 
     test('Verify that user can see title of this site', async ({ page }) => {

@@ -6,13 +6,18 @@ export default class Products extends BasePage {
         super(page);
     }
 
-    async openMenu(){
+    async openMenu() {
         await this.buttonLocator('Open Menu').click();
     }
 
 
-    async resetAppState(){
+    async resetAppState() {
         await this.datatestLocator('reset-sidebar-link').click();
+    }
+
+    async doLogout() {
+        await this.datatestLocator('logout-sidebar-link').click();
+
     }
 
     async addProductToCart(productName) {
