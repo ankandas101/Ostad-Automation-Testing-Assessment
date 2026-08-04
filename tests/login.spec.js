@@ -17,7 +17,7 @@ test.describe('Login Page Tests', () => {
     });
 
 
-    test.only('Verify that user can see error message while logging with locked_out_user', async ({ page }) => {
+    test('Verify that user can see error message while logging with locked_out_user', async ({ page }) => {
 
         await home.doLogin("locked_out_user", "secret_sauce");
         const errorText = await home.getErrorMessage();
