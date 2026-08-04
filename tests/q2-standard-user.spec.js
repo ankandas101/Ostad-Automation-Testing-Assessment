@@ -20,8 +20,11 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         await page.waitForTimeout(500);
         await products.resetAppState();
         await page.waitForTimeout(1000);
-        await products.addProduct('Sauce Labs Fleece Jacket');
+        //await products.addProduct('Sauce Labs Fleece Jacket');
+        await products.addToCartRandom(3);
         await page.waitForTimeout(3000);
+
+
         // await products.doLogout();
         // await page.waitForTimeout(3000);
         // await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
@@ -31,6 +34,9 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
     test('Verify that user can see title of this site', async ({ page }) => {
         await expect(page).toHaveTitle(/Swag/);
     });
+
+
+
 
 });
 
