@@ -24,20 +24,13 @@ export default class Products extends BasePage {
 
     }
 
-    // async addProductToCart(productName) {
-    //     const productLocator = this.textLocator(productName);
-    //     await expect(productLocator).toBeVisible();
-    //     const addToCartButton = productLocator.locator('xpath=..').locator('button');
-    //     await expect(addToCartButton).toBeVisible();
-    //     await addToCartButton.click();
-    // }
 
     async addProductToCart(productName) {
 
         await this.page.locator('.inventory_item').filter({ has: this.page.locator('.inventory_item_name', { hasText: productName }) }).locator('button').click();
     }
 
-    async addToCartRandom(numberOfProducts) {
+    async addToCartRandomly(numberOfProducts) {
 
         const addToCartButtons = this.page.locator('button:has-text("Add to cart")');
         for (let i = 0; i < numberOfProducts; i++) {
@@ -47,6 +40,9 @@ export default class Products extends BasePage {
 
     async viewCart() {
         await this.datatestLocator('shopping-cart-link').click();
+    }
 
+    async getnumberOfProductsOfCart(){
+    return await this.datatestLocator('shopping-cart-link').textContent();
     }
 }
