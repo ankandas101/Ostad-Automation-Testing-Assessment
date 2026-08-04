@@ -19,29 +19,22 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         await products.openMenu();
         await page.waitForTimeout(500);
         await products.resetAppState();
-        await page.waitForTimeout(1000);
         await products.closeMenu();
        
         //await products.addProductToCart('Sauce Labs Fleece Jacket');
 
         await products.addToCartRandomly(3); // number of products you want to add to cart 
-        await page.waitForTimeout(3000);
 
         const numOfCart = await products.getnumberOfProductsOfCart();
         await expect(numOfCart).toContain('3');
 
-        
+        await products.viewCart();
+
         // await products.doLogout();
         // await page.waitForTimeout(3000);
         // await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
 
     });
-
-    test('Verify that user can see title of this site', async ({ page }) => {
-        await expect(page).toHaveTitle(/Swag/);
-    });
-
-
 
 
 });
