@@ -27,5 +27,11 @@ export default class Products extends BasePage {
         await expect(addToCartButton).toBeVisible();
         await addToCartButton.click();
     }
+    
+    async addProduct(productName) {
+
+    await this.page.locator('.inventory_item').filter({has: this.page.locator('.inventory_item_name', { hasText: productName })}).locator('button').click();
+
+}
 
 }

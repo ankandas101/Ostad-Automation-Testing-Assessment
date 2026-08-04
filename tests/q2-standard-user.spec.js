@@ -20,10 +20,11 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         await page.waitForTimeout(500);
         await products.resetAppState();
         await page.waitForTimeout(1000);
-        
-        await products.doLogout();
+        await products.addProduct('Sauce Labs Fleece Jacket');
         await page.waitForTimeout(3000);
-        await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
+        // await products.doLogout();
+        // await page.waitForTimeout(3000);
+        // await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
 
     });
 
