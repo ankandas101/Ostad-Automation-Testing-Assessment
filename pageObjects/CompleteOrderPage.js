@@ -1,6 +1,6 @@
 import BasePage from "./BasePage";
 
-export default class Complete extends BasePage {
+export default class CompleteOrderPage extends BasePage {
     constructor(page) {
         super(page);
     }

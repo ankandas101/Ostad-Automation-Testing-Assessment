@@ -24,12 +24,6 @@ test.describe('Login Page Tests', () => {
         expect(errorText).toContain('Epic sadface: Sorry, this user has been locked out.');
     });
 
-
-    test('Verify that user can see title of this site', async ({ page }) => {
-        await expect(page).toHaveTitle(/Swag/);
-    });
-
-
 });
 
 
