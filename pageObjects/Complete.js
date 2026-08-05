@@ -9,7 +9,7 @@ export default class Complete extends BasePage {
         return await this.datatestLocator('complete-text').textContent();
     }
 
-    async goToHome(){
+    async goToHome() {
         await this.buttonLocator('Back Home').click();
     }
 

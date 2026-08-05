@@ -22,8 +22,8 @@ export default class BasePage {
         await locator.fill(value);
     }
 
-    async getErrorMessage(){
-        return await this.datatestLocator('error').textContent();  
+    async getErrorMessage() {
+        return await this.datatestLocator('error').textContent();
     }
 
     buttonLocator(buttonText) {

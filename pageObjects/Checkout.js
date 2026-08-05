@@ -10,7 +10,7 @@ export default class Checkout extends BasePage {
         return allProductsTitle;
     }
 
-    async finishCheckout(){
+    async finishCheckout() {
         await this.buttonLocator('Finish').click();
     }
 

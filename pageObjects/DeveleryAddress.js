@@ -5,15 +5,15 @@ export default class DeveleryAddress extends BasePage {
     }
 
 
-    async fillDeveleryAddress(firstName,lastName,postalCode){
+    async fillDeveleryAddress(firstName, lastName, postalCode) {
 
-        await this.fillInput(this.datatestLocator('firstName'),firstName);
-        await this.fillInput(this.datatestLocator('lastName'),lastName);
-        await this.fillInput(this.datatestLocator('postalCode'),postalCode);
+        await this.fillInput(this.datatestLocator('firstName'), firstName);
+        await this.fillInput(this.datatestLocator('lastName'), lastName);
+        await this.fillInput(this.datatestLocator('postalCode'), postalCode);
     }
 
-    async goToFinalCheckout(firstName,lastName,postalCode){
-        await this.fillDeveleryAddress(firstName,lastName,postalCode);
+    async goToFinalCheckout(firstName, lastName, postalCode) {
+        await this.fillDeveleryAddress(firstName, lastName, postalCode);
         await this.buttonLocator('continue').click();
     }
 
