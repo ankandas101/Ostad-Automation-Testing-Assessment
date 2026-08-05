@@ -1,4 +1,5 @@
 import BasePage from "./BasePage";
+
 export default class Checkout extends BasePage {
     constructor(page) {
         super(page);
@@ -7,6 +8,10 @@ export default class Checkout extends BasePage {
     async getProductNames() {
         const allProductsTitle = this.datatestLocator('inventory-item-name').allInnerTexts();
         return allProductsTitle;
+    }
+
+    async finishCheckout(){
+        await this.buttonLocator('Finish').click();
     }
 
 }

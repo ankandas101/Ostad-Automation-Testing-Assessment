@@ -13,6 +13,10 @@ export default class BasePage {
         return this.page.getByText(text);
     }
 
+    headerLocator(level) {
+        return this.page.getByRole('heading', { level });
+    }
+
     async fillInput(locator, value) {
         await expect(locator).toBeVisible();
         await locator.fill(value);

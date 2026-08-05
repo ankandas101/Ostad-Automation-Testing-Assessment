@@ -4,11 +4,11 @@ import Products from '../pageObjects/Products';
 import Cart from '../pageObjects/Cart';
 import Checkout from '../pageObjects/Checkout';
 import DeveleryAddress from '../pageObjects/DeveleryAddress';
-
+import Complete from '../pageObjects/Complete';
 
 
 test.describe('Q2 - Standard User Purchase Flow', () => {
-    let home, products, cart, checkout, develeryAddress;
+    let home, products, cart, checkout, develeryAddress, complete;
 
     test.beforeEach(async ({ page }) => {
         await page.goto('https://www.saucedemo.com/', { waitUntil: 'domcontentloaded' });
@@ -17,6 +17,7 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         cart = new Cart(page);
         checkout = new Checkout(page);
         develeryAddress = new DeveleryAddress(page);
+        complete = new Complete(page);
     });
 
     test('Verify that the user can complete checkout successfully after resetting the app state and adding three products', async ({ page }) => {
@@ -47,7 +48,6 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
 
         await products.viewCart();
         const cartItems = await cart.getProductNames();
-       // await page.pause();
 
         // verify that cartItems name as same as test products name
         expect(cartItems).toEqual(testProducts);
@@ -62,9 +62,25 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         const checkoutItems = await checkout.getProductNames();
         expect(checkoutItems).toEqual(testProducts);
         
-        // await products.doLogout();
-        // await page.waitForTimeout(3000);
-        // await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
+
+        await checkout.finishCheckout();
+        await page.waitForTimeout(3000);
+
+        //verify message after final checkout
+        const finalMessage = await complete.getFinalCheckoutMessage();
+        expect(finalMessage).toContain('Your order has been dispatched,');
+        await expect(complete.headerLocator(2)).toContainText('Thank you for your order!');
+
+        await complete.goToHome();
+        await page.waitForTimeout(3000);
+        await expect(page).toHaveURL(/.*inventory/,{ timeout: 3000 });
+
+        await products.openMenu();
+        await products.resetAppState();
+        await products.doLogout();
+
+        await page.waitForTimeout(3000);
+        await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });
 
     });
 
