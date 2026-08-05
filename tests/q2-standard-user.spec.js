@@ -2,14 +2,21 @@ import { test, describe, expect } from '@playwright/test';
 import HomePage from '../pageObjects/HomePage';
 import Products from '../pageObjects/Products';
 import Cart from '../pageObjects/Cart';
+import Checkout from '../pageObjects/Checkout';
+import DeveleryAddress from '../pageObjects/DeveleryAddress';
+
+
+
 test.describe('Q2 - Standard User Purchase Flow', () => {
-    let home, products, cart;
+    let home, products, cart, checkout, develeryAddress;
 
     test.beforeEach(async ({ page }) => {
         await page.goto('https://www.saucedemo.com/', { waitUntil: 'domcontentloaded' });
         home = new HomePage(page);
         products = new Products(page);
         cart = new Cart(page);
+        checkout = new Checkout(page);
+        develeryAddress = new DeveleryAddress(page);
     });
 
     test('Verify that the user can complete checkout successfully after resetting the app state and adding three products', async ({ page }) => {
@@ -22,6 +29,7 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         await products.closeMenu();
         const testProducts = [
             "Sauce Labs Backpack",
+            "Sauce Labs Bike Light",
             "Sauce Labs Bolt T-Shirt"
         ];
 
@@ -34,14 +42,26 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
 
         // Verify that user can see correct number of products in Cart Icon
         const numOfCart = await products.getnumberOfProductsOfCart();
-        await expect.soft(numOfCart).toContain(testProducts.length());
+        await expect(numOfCart).toContain('3');
 
 
         await products.viewCart();
-        const cartItems = await cart.getProductName();
+        const cartItems = await cart.getProductNames();
+       // await page.pause();
+
         // verify that cartItems name as same as test products name
         expect(cartItems).toEqual(testProducts);
+        await cart.goToCheckout();
 
+        // fillup develery Address form in step 1 checkout page
+        await develeryAddress.goToFinalCheckout('aaaa','ddas','1900');
+        await page.waitForTimeout(1500);
+
+
+        // verify that checkout Items name as same as test products name
+        const checkoutItems = await checkout.getProductNames();
+        expect(checkoutItems).toEqual(testProducts);
+        
         // await products.doLogout();
         // await page.waitForTimeout(3000);
         // await expect(page).toHaveURL(/.*saucedemo/,{ timeout: 5000 });

@@ -1,7 +1,5 @@
 import BasePage from "./BasePage";
-import { expect } from "@playwright/test";
-
-export default class Cart extends BasePage {
+export default class Checkout extends BasePage {
     constructor(page) {
         super(page);
     }
@@ -11,10 +9,4 @@ export default class Cart extends BasePage {
         return allProductsTitle;
     }
 
-    async goToCheckout() {
-        await this.buttonLocator('checkout').click();
-
-    }
-
-
-} 
+}

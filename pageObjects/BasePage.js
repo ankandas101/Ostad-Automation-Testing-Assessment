@@ -14,9 +14,8 @@ export default class BasePage {
     }
 
     async fillInput(locator, value) {
-        const loc = await locator;
-        expect(loc).toBeVisible();
-        await loc.fill(value);
+        await expect(locator).toBeVisible();
+        await locator.fill(value);
     }
 
     async getErrorMessage(){
