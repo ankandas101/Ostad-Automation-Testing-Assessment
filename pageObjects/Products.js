@@ -45,4 +45,6 @@ export default class Products extends BasePage {
     async getnumberOfProductsOfCart(){
     return await this.datatestLocator('shopping-cart-link').textContent();
     }
+
+    
 }
