@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","242","Verify that user can see error message while logging with locked_out_user","chromium","2026-08-06","passed","2026-08-06","Q1 - Locked User Page Tests Validation","q1-locked-user.spec.js","",""
+"","3545","Verify that the user can complete checkout successfully after resetting the app state and adding three products","chromium","2026-08-06","passed","2026-08-06","Q2 - Standard User Purchase Flow","q2-standard-user.spec.js","",""
+"","271","Verify that user can see error message while logging with locked_out_user","chromium","2026-08-06","passed","2026-08-06","Login Page Tests","login.spec.js","",""
+"","165","Verify that user can see the title of this site","chromium","2026-08-06","passed","2026-08-06","Q1 - Locked User Page Tests Validation","q1-locked-user.spec.js","",""
+"","22162","User should purchase the first product after sorting Z to A and complete checkout successfully","chromium","2026-08-06","passed","2026-08-06","Q3 - Performance Glitch User Purchase Flow","q3.spec.js","",""
+"","1354","Verify that user can login with standard_user","chromium","2026-08-06","passed","2026-08-06","Login Page Tests","login.spec.js","",""
