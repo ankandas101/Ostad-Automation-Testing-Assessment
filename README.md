@@ -400,21 +400,21 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 
 ## HTML Report
 
-_Add screenshot here._
+_update soon._
 
 ## Allure Report
 
-_Add screenshot here._
+_update soon_
 
 ## Project Structure
 
-_Add screenshot here._
+_update soon_
 
 ---
 
 # 🎥 Video Demonstration
 
-Add your YouTube or Google Drive walkthrough link here.
+update soon
 
 ---
 

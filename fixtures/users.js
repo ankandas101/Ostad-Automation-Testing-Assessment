@@ -9,13 +9,8 @@ export const users = {
         password: 'secret_sauce'
     },
 
-    performanceUser: {
+    glitchUser: {
         username: 'performance_glitch_user',
         password: 'secret_sauce'
     }
 };
-
-// await login.login(
-//     users.lockedUser.username,
-//     users.lockedUser.password
-// );

@@ -1,5 +1,6 @@
 import { test, describe, expect } from '@playwright/test';
 import HomePage from '../pageObjects/HomePage';
+import { users } from '../fixtures/users.js';
 
 test.describe('Q1 - Locked User Page Tests Validation', () => {
     let home;
@@ -11,7 +12,7 @@ test.describe('Q1 - Locked User Page Tests Validation', () => {
 
     test('Verify that user can see error message while logging with locked_out_user', async ({ page }) => {
 
-        await home.doLogin("locked_out_user", "secret_sauce");
+        await home.doLogin(users.lockedUser.username, users.lockedUser.password);
         const errorText = await home.getErrorMessage();
         expect(errorText).toContain('Epic sadface: Sorry, this user has been locked out.');
     });

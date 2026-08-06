@@ -11,6 +11,19 @@ export default class CartPage extends BasePage {
         return allProductsTitle;
     }
 
+    async getProductPrices() {
+        const allProductsPrice = await this.datatestLocator('inventory-item-price').allInnerTexts();
+               
+        const price =[];
+        for (const productPrice of allProductsPrice) {
+            const numericPrice = parseFloat(productPrice.replace('$', ''));
+            price.push(numericPrice);
+        }
+        return price;
+    }
+        
+
+
     async goToCheckout() {
         await this.buttonLocator('checkout').click();
 

@@ -1,0 +1,2 @@
+First product: Test.allTheThings() T-Shirt (Red) added to cart
+Total Expected Prices Test page: [ 15.99 ]
