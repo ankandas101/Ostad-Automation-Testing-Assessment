@@ -21,14 +21,13 @@ https://www.saucedemo.com/
 ## ✅ Q1 – Locked User Login Validation
 
 - Login using `locked_out_user`
-- Verify the locked user error message
+- Verify the locked user error message while login
 
 ## ✅ Q2 – Standard User Purchase Flow
 
 - Login with `standard_user`
 - Reset App State
 - Add any three products to the cart
-- Proceed to checkout
 - Fill checkout information using Faker generated data
 - Verify product names
 - Verify total price
@@ -44,7 +43,7 @@ https://www.saucedemo.com/
 - Sort products by **Name (Z → A)**
 - Add the first product
 - Navigate through checkout
-- Verify product name(s)
+- Verify product name
 - Verify total price
 - Complete purchase
 - Verify successful order message
@@ -119,9 +118,9 @@ project-root/
 # 📦 Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ankandas101/Ostad-Automation-Testing-Assessment
 
-cd <project-folder>
+cd Ostad-Automation-Testing-Assessment
 
 npm install
 
