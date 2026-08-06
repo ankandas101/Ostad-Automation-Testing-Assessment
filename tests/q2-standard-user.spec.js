@@ -41,9 +41,9 @@ test.describe('Q2 - Standard User Purchase Flow', () => {
         }
 
 
-        // // Verify that user can see correct number of products in Cart Icon
-        // const numOfCart = await products.getnumberOfProductsOfCart();
-        // await expect(numOfCart).toContain(testProducts.length);
+        // Verify that user can see correct number of products in Cart Icon
+        const numOfCart = await products.getnumberOfProductsOfCart();
+        await expect(numOfCart).toContain(testProducts.length.toString());
 
         await products.viewCart();
         const cartItems = await cart.getProductNames();

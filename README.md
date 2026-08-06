@@ -1,4 +1,4 @@
-# 🧪 SauceDemo UI Automation Testing with Playwright
+# SauceDemo UI Automation Testing with Playwright
 
 ![Playwright](https://img.shields.io/badge/Playwright-Automation-green)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
@@ -52,7 +52,7 @@ https://www.saucedemo.com/
 
 > **Note**
 >
-> `performance_glitch_user` intentionally simulates a slow application. Therefore, only this scenario uses an increased timeout while relying on Playwright's auto-waiting mechanisms.
+> `performance_glitch_user` intentionally simulates a slow application. Therefore, use use increased timeout (60 Second ) while relying on Playwright's auto-waiting mechanisms for only this scenario .
 
 ---
 

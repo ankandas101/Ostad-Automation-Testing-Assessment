@@ -5,6 +5,7 @@ export default class BasePage {
     constructor(page) {
         this.page = page;
     }
+    
     datatestLocator(dataTest) {
         return this.page.locator(`[data-test='${dataTest}']`);
     }

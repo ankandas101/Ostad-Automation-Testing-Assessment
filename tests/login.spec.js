@@ -1,6 +1,6 @@
 import { test, describe, expect } from '@playwright/test';
 import HomePage from '../pageObjects/HomePage';
-
+import { users } from '../fixtures/users.js';
 test.describe('Login Page Tests', () => {
     let home;
 
@@ -11,7 +11,7 @@ test.describe('Login Page Tests', () => {
 
     test('Verify that user can login with standard_user ', async ({ page }) => {
 
-        await home.doLogin("standard_user", "secret_sauce");
+        await home.doLogin(users.standardUser.username, users.standardUser.password);
         await page.waitForTimeout(1000);
         await expect(page).toHaveURL(/.*inventory/, { timeout: 5000 });
     });
