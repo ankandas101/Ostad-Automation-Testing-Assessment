@@ -232,6 +232,14 @@ Q1 → Q2 → Q3
 
 # 📊 Reports
 
+---
+## 📈 Live Allure Report
+
+The latest Allure Report is automatically generated and published after every GitHub Actions workflow execution.
+
+👉 https://ankandas101.github.io/Ostad-Automation-Testing-Assessment 
+
+
 ## Playwright HTML Report
 
 Using npm:
@@ -386,14 +394,6 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 
 ---
 
-
-
----
-## 📈 Live Allure Report
-
-The latest Allure Report is automatically generated and published after every GitHub Actions workflow execution.
-
-👉 https://ankandas101.github.io/saucedemo-playwright/
 
 
 # 📷 Screenshots
