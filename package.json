@@ -1,11 +1,26 @@
 {
   "name": "ostad-automation-testing-assessment",
   "version": "1.0.0",
-  "description": "",
+  "description": "SauceDemo UI Automation Testing using Playwright",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test": "playwright test",
+    "q1": "playwright test tests/q1-locked-user.spec.js",
+    "q2": "playwright test tests/q2-standard-user.spec.js",
+    "q3": "playwright test tests/q3-performance-user.spec.js",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open",
+    "allure": "npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "qa",
+    "javascript",
+    "allure"
+  ],
+  "author": "Ankan Das",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {

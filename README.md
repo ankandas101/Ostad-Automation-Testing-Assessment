@@ -126,12 +126,91 @@ npm install
 
 npx playwright install
 ```
+# 📋 Prerequisites
+
+Before running the project, make sure the following are installed:
+
+- Node.js (v18 or later recommended)
+- npm
+- Git
+
+> **Optional:** Install Allure CLI if you want to generate Allure reports locally.
+
+```bash
+npm install -g allure-commandline
+```
+---
+# ▶ Running Tests
+
+## Run All Test Scenarios
+
+Using npm:
+
+```bash
+npm test
+```
+
+Or using Playwright directly:
+
+```bash
+npx playwright test
+```
 
 ---
 
-# ▶ Running Tests
+## Run Individual Test Scenarios
 
-## Run all scenarios
+### Q1 - Locked User Login Validation
+
+Using npm:
+
+```bash
+npm run q1
+```
+
+Or:
+
+```bash
+npx playwright test tests/q1-locked-user.spec.js
+```
+
+---
+
+### Q2 - Standard User Purchase Flow
+
+Using npm:
+
+```bash
+npm run q2
+```
+
+Or:
+
+```bash
+npx playwright test tests/q2-standard-user.spec.js
+```
+
+---
+
+### Q3 - Performance Glitch User Purchase Flow
+
+Using npm:
+
+```bash
+npm run q3
+```
+
+Or:
+
+```bash
+npx playwright test tests/q3-performance-user.spec.js
+```
+
+---
+
+# 🔄 Sequential Execution
+
+All three scenarios can be executed sequentially using:
 
 ```bash
 npm test
@@ -143,25 +222,60 @@ or
 npx playwright test
 ```
 
-## Run individual scenarios
+Execution Order:
 
-### Q1
-
-```bash
-npm run q1
+```text
+Q1 → Q2 → Q3
 ```
 
-### Q2
+---
+
+# 📊 Reports
+
+## Playwright HTML Report
+
+Using npm:
 
 ```bash
-npm run q2
+npm run report
 ```
 
-### Q3
+Or:
 
 ```bash
-npm run q3
+npx playwright show-report
 ```
+
+---
+
+## Allure Report
+
+Generate and open the report:
+
+```bash
+npm run allure
+```
+
+Or manually:
+
+```bash
+allure generate allure-results --clean
+allure open
+```
+
+---
+
+# 📋 Available Commands
+
+| Command | Description |
+|----------|-------------|
+| `npm test` | Run all test scenarios sequentially |
+| `npx playwright test` | Run all test scenarios sequentially |
+| `npm run q1` | Run Q1 - Locked User Login Validation |
+| `npm run q2` | Run Q2 - Standard User Purchase Flow |
+| `npm run q3` | Run Q3 - Performance Glitch User Purchase Flow |
+| `npm run report` | Open Playwright HTML Report |
+| `npm run allure` | Generate and open Allure Report |
 
 ---
 
@@ -272,19 +386,15 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 
 ---
 
-# 💡 Best Practices
 
-- Page Object Model (POM)
-- Reusable Base Page
-- Dynamic Test Data
-- Faker Integration
-- Auto Waiting
-- Dynamic Product Verification
-- Dynamic Price Verification
-- HTML Report
-- Allure Report
 
 ---
+## 📈 Live Allure Report
+
+The latest Allure Report is automatically generated and published after every GitHub Actions workflow execution.
+
+👉 https://ankandas101.github.io/saucedemo-playwright/
+
 
 # 📷 Screenshots
 
