@@ -10,6 +10,15 @@
 
 This repository contains an end-to-end UI automation testing solution for the **SauceDemo** application using **Playwright** with **JavaScript**.
 
+
+### 👨‍💻 Author
+
+**Ankan Das**
+
+- 📧 Email: hello@ankandas.me  🌐 Portfolio: https://ankandas.me
+
+---
+
 ### Application Under Test
 
 https://www.saucedemo.com/
@@ -52,7 +61,7 @@ https://www.saucedemo.com/
 
 > **Note**
 >
-> `performance_glitch_user` intentionally simulates a slow application. Therefore, use use increased timeout (60 Second ) while relying on Playwright's auto-waiting mechanisms for only this scenario .
+> `performance_glitch_user` intentionally simulates a slow application. Therefore, use use increased timeout (90 Second) while relying on Playwright's auto-waiting mechanisms for only this scenario, if it shows timeout error please increase this value .
 
 ---
 
@@ -128,7 +137,7 @@ npx playwright install
 
 Before running the project, make sure the following are installed:
 
-- Node.js (v18 or later recommended)
+- Node.js (v18+ , v 24 recomended)
 - npm
 - Git
 
@@ -396,35 +405,23 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 
 # 📷 Screenshots
 
+## Allure Report
+<img width="1919" height="1009" alt="allure report" src="https://github.com/user-attachments/assets/0caf6ef2-4d2c-433e-84fc-ca43f064a289" />
+
+
 ## HTML Report
 
-_update soon._
-
-## Allure Report
-
-_update soon_
-
-## Project Structure
-
-_update soon_
+<img width="1392" height="851" alt="html report" src="https://github.com/user-attachments/assets/74d30693-f72d-4ab1-9513-5213a121ebb8" />
 
 ---
 
 # 🎥 Video Demonstration
 
-update soon
+updating soon
 
 ---
 
-# 👨‍💻 Author
-
-**Ankan Das**
-
-- 📧 Email: hello@ankandas.me
-- 🌐 Portfolio: https://ankandas.me
-
----
 
 # 📄 License
 
-This project was developed as part of a UI Automation Testing assignment for educational and evaluation purposes.
+This project was developed as part of a UI Automation Testing assignment for OSTAD SQA course evaluation purposes.
