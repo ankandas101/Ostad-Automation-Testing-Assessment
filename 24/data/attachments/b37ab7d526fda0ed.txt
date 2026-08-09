@@ -1,0 +1,1 @@
+Total Expected Prices Test page: [ 29.99, 9.99, 15.99 ]
