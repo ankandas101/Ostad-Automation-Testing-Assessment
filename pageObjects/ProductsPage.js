@@ -15,10 +15,8 @@ export default class ProductsPage extends BasePage {
 
     }
 
-
     async resetAppState() {
         await expect(this.datatestLocator('reset-sidebar-link')).toBeVisible({ timeout: 15000 });
-
         await this.datatestLocator('reset-sidebar-link').click();
     }
 
