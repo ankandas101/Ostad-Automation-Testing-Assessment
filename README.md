@@ -104,8 +104,6 @@ project-root/
 │   ├── q2-standard-user.spec.js
 │   └── q3-performance-user.spec.js
 │
-├── screenshots/
-├── videos/
 ├── playwright-report/
 ├── allure-results/
 ├── playwright.config.js

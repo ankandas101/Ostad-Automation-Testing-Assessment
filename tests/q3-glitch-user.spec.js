@@ -1,4 +1,4 @@
-import { test, describe, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import HomePage from '../pageObjects/HomePage.js';
 import ProductsPage from '../pageObjects/ProductsPage.js';
 import CartPage from '../pageObjects/CartPage.js';
@@ -26,7 +26,7 @@ test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
     });
 
     test('User should purchase the first product after sorting Z to A and complete checkout successfully', async ({ page }) => {
-        test.setTimeout(60000);
+        test.setTimeout(90000);
         const expectedPrices = [];
         await home.doLogin(users.glitchUser.username, users.glitchUser.password);
         await expect(page).toHaveURL(/.*inventory/, { timeout: 5000 });
@@ -36,6 +36,11 @@ test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
 
         // Sort By Name Z to A and first product to cart
         await products.sortProductsBy('za');
+
+        // Ensure sorting completed before continuing
+        await expect(page.locator('.inventory_item_name').first())
+            .toHaveText('Test.allTheThings() T-Shirt (Red)', { timeout: 15000 });
+
 
         const firstProductName = await products.addFirstProductToCart();
 
@@ -100,8 +105,8 @@ test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
         const finalMessage = await complete.getFinalCheckoutMessage();
         expect(finalMessage).toContain('Your order has been dispatched,');
         await expect(complete.headerLocator(2)).toContainText('Thank you for your order!');
-        
-        
+
+
         // going back to home page
         await complete.goToHome();
         await expect(page).toHaveURL(/.*inventory/, { timeout: 3000 });

@@ -1,4 +1,4 @@
-import { test, describe, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import HomePage from '../pageObjects/HomePage';
 import { users } from '../fixtures/users.js';
 

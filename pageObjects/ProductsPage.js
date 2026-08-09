@@ -7,6 +7,7 @@ export default class ProductsPage extends BasePage {
     }
 
     async openMenu() {
+
         await this.buttonLocator('Open Menu').click();
     }
     async closeMenu() {
@@ -16,6 +17,8 @@ export default class ProductsPage extends BasePage {
 
 
     async resetAppState() {
+        await expect(this.datatestLocator('reset-sidebar-link')).toBeVisible({ timeout: 15000 });
+
         await this.datatestLocator('reset-sidebar-link').click();
     }
 
