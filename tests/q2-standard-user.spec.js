@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import HomePage from '../pageObjects/HomePage';
-import ProductsPage from '../pageObjects/ProductsPage';
-import CartPage from '../pageObjects/CartPage';
-import CheckoutPage from '../pageObjects/CheckoutPage';
-import DeveleryAddress from '../pageObjects/DeveleryAddress';
+import HomePage from '../pageObjects/HomePage.js';
+import ProductsPage from '../pageObjects/ProductsPage.js';
+import CartPage from '../pageObjects/CartPage.js';
+import CheckoutPage from '../pageObjects/CheckoutPage.js';
+import DeveleryAddress from '../pageObjects/DeveleryAddress.js';
 import CompleteOrderPage from '../pageObjects/CompleteOrderPage.js';
 
 import { testProducts, deliveryInfo } from '../fixtures/testData.js';

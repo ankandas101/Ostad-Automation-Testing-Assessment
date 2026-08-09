@@ -1,4 +1,4 @@
-import BasePage from "./BasePage";
+import BasePage from "./BasePage.js";
 export default class DeveleryAddress extends BasePage {
     constructor(page) {
         super(page);

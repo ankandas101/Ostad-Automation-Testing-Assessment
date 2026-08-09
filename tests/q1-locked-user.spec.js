@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import HomePage from '../pageObjects/HomePage';
+import HomePage from '../pageObjects/HomePage.js';
 import { users } from '../fixtures/users.js';
 
 test.describe('Q1 - Locked User Page Tests Validation', () => {

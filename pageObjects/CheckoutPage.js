@@ -1,4 +1,4 @@
-import BasePage from "./BasePage";
+import BasePage from "./BasePage.js";
 
 export default class CheckoutPage extends BasePage {
     constructor(page) {
