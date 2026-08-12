@@ -143,10 +143,13 @@ npx playwright install
 
 Before running the project, make sure the following are installed:
 
-- Node.js (v18+ , v 24 recomended)
-- npm
-- Git
+- Node.js (v18+ , v24 recomended)
+- npm (v11+)
 
+```bash
+node -v
+npm -v
+```
 > **Optional:** Install Allure CLI if you want to generate Allure reports locally.
 
 ```bash
