@@ -1,0 +1,2 @@
+Total Expected Prices: [ 29.99, 9.99, 15.99 ]
+Total Cart Prices test page: [ 29.99, 9.99, 15.99 ]
