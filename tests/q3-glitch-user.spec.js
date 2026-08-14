@@ -10,7 +10,7 @@ import { testProducts, deliveryInfo } from '../fixtures/testData.js';
 import { users } from '../fixtures/users.js';
 
 test.use({
-    launchOptions: { slowMo: 300 } // use to slow down the every step of execution speed .
+    launchOptions: { slowMo: 900 } // THIS use to slow down the every step of execution speed .
 });
 test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
     let home, products, cart, checkout, develeryAddress, complete;
