@@ -89,6 +89,12 @@ https://www.saucedemo.com/
 - Playwright HTML Report
 
 ---
+## 🎬 Video Presentaion
+<a href="https://youtu.be/mjeayQ3q9Ks" target="_blank">
+To khow details about this project, please Watch this YouTube Video 
+</a>
+
+---
 
 # 📁 Project Structure
 
@@ -137,10 +143,13 @@ npx playwright install
 
 Before running the project, make sure the following are installed:
 
-- Node.js (v18+ , v 24 recomended)
-- npm
-- Git
+- Node.js (v18+ , v24 recomended)
+- npm (v11+)
 
+```bash
+node -v
+npm -v
+```
 > **Optional:** Install Allure CLI if you want to generate Allure reports locally.
 
 ```bash
@@ -402,7 +411,6 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 ---
 
 
-
 # 📷 Screenshots
 
 ## Allure Report
@@ -417,10 +425,9 @@ Only the **performance_glitch_user** scenario uses an increased timeout because 
 
 # 🎥 Video Demonstration
 
-updating soon
-
----
-
+<a href="https://youtu.be/mjeayQ3q9Ks" target="_blank">
+To khow details about this project, please Watch this YouTube Video 
+</a>
 
 # 📄 License
 
