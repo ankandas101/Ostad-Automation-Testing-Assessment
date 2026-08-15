@@ -1,0 +1,4 @@
+Total Expected Prices Test page: [ 29.99, 9.99, 15.99 ]
+test Products Expected price: 55.97
+All Products Price in Checkout: 55.97
+final Price in Checkout page: 60.45
