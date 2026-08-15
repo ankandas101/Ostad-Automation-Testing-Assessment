@@ -10,7 +10,7 @@ import { testProducts, deliveryInfo } from '../fixtures/testData.js';
 import { users } from '../fixtures/users.js';
 
 test.use({
-    launchOptions: { slowMo: 900 } // THIS use to slow down the every step of execution speed .
+    launchOptions: { slowMo: 500 } // THIS use to slow down the every step of execution speed .
 });
 test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
     let home, products, cart, checkout, develeryAddress, complete;
@@ -26,7 +26,7 @@ test.describe('Q3 - Performance Glitch User Purchase Flow', () => {
     });
 
     test('User should purchase the first product after sorting Z to A and complete checkout successfully', async ({ page }) => {
-        test.setTimeout(90000);
+        test.setTimeout(120000);
         const expectedPrices = [];
         await home.doLogin(users.glitchUser.username, users.glitchUser.password);
         await expect(page).toHaveURL(/.*inventory/, { timeout: 5000 });
