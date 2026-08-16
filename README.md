@@ -219,7 +219,7 @@ npm run q3
 Or:
 
 ```bash
-npx playwright test tests/q3-performance-user.spec.js
+npx playwright test tests/q3-glitch-user.spec.js
 ```
 
 ---
